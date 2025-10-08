@@ -10,13 +10,13 @@ const content = {
   fr: {
     title: "Prêt à Transformer Votre Trading ?",
     description: "Rejoignez des milliers de traders qui utilisent déjà QUBEXT pour optimiser leurs investissements.",
-    cta: "Commencer Maintenant",
+    cta: "Essai Gratuit",
     contact: "Nous Contacter"
   },
   en: {
     title: "Ready to Transform Your Trading?",
     description: "Join thousands of traders already using QUBEXT to optimize their investments.",
-    cta: "Get Started Now",
+    cta: "Free Trial",
     contact: "Contact Us"
   }
 };

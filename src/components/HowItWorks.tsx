@@ -12,23 +12,23 @@ const content = {
     steps: [
       {
         icon: Download,
-        title: "Créez votre compte",
-        description: "Inscription gratuite en moins de 2 minutes. Aucune carte de crédit requise pour démarrer."
+        title: "Téléchargez l'appli",
+        description: "Disponible sur iOS et Android. Installation rapide et gratuite pour commencer votre aventure trading."
       },
       {
         icon: Brain,
-        title: "Configurez votre IA",
-        description: "Personnalisez les paramètres selon votre profil de risque et vos objectifs d'investissement."
+        title: "Inscription",
+        description: "Créez votre compte en quelques secondes directement dans l'application mobile."
       },
       {
         icon: TrendingUp,
-        title: "L'IA analyse le marché",
-        description: "Notre système surveille et analyse des millions de points de données en temps réel."
+        title: "Lancez l'analyse",
+        description: "L'assistant IA analyse le marché en temps réel et vous fournit des insights personnalisés."
       },
       {
         icon: Rocket,
         title: "Tradez et profitez",
-        description: "Recevez des alertes intelligentes et exécutez vos ordres avec confiance."
+        description: "Recevez des recommandations intelligentes et prenez des décisions éclairées avec confiance."
       }
     ]
   },
@@ -38,23 +38,23 @@ const content = {
     steps: [
       {
         icon: Download,
-        title: "Create your account",
-        description: "Free signup in less than 2 minutes. No credit card required to get started."
+        title: "Download the app",
+        description: "Available on iOS and Android. Quick and free installation to start your trading journey."
       },
       {
         icon: Brain,
-        title: "Configure your AI",
-        description: "Customize settings according to your risk profile and investment goals."
+        title: "Sign up",
+        description: "Create your account in seconds directly in the mobile app."
       },
       {
         icon: TrendingUp,
-        title: "AI analyzes the market",
-        description: "Our system monitors and analyzes millions of data points in real-time."
+        title: "Launch analysis",
+        description: "The AI assistant analyzes the market in real-time and provides personalized insights."
       },
       {
         icon: Rocket,
         title: "Trade and profit",
-        description: "Receive smart alerts and execute your orders with confidence."
+        description: "Receive smart recommendations and make informed decisions with confidence."
       }
     ]
   }

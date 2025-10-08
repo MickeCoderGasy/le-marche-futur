@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, TrendingUp, Download } from "lucide-react";
 import qubextLogo from "@/assets/qubext-logo.png";
 
 interface HeroProps {
@@ -11,8 +11,7 @@ const content = {
     title: "Intelligence de Trading",
     subtitle: "Alimentée par l'IA",
     description: "Transformez vos décisions de trading avec notre assistant IA de pointe. Analyses en temps réel, prédictions précises et stratégies optimisées pour maximiser vos profits.",
-    cta: "Commencer Gratuitement",
-    demo: "Voir la Démo",
+    cta: "Télécharger l'Application",
     stats: [
       { value: "98%", label: "Précision" },
       { value: "24/7", label: "Surveillance" },
@@ -23,8 +22,7 @@ const content = {
     title: "Trading Intelligence",
     subtitle: "Powered by AI",
     description: "Transform your trading decisions with our cutting-edge AI assistant. Real-time analysis, accurate predictions, and optimized strategies to maximize your profits.",
-    cta: "Start Free",
-    demo: "Watch Demo",
+    cta: "Download the App",
     stats: [
       { value: "98%", label: "Accuracy" },
       { value: "24/7", label: "Monitoring" },
@@ -69,22 +67,15 @@ export const Hero = ({ language }: HeroProps) => {
             {t.description}
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          {/* CTA Button */}
+          <div className="flex justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <Button 
               size="lg" 
               className="bg-gradient-accent text-accent-foreground hover:shadow-glow transition-all duration-300 text-lg px-8 py-6 group"
             >
+              <TrendingUp className="mr-2 h-5 w-5" />
               {t.cta}
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-secondary text-secondary hover:bg-secondary/10 text-lg px-8 py-6"
-            >
-              <TrendingUp className="mr-2 h-5 w-5" />
-              {t.demo}
             </Button>
           </div>
 
