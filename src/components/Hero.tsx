@@ -48,7 +48,7 @@ export const Hero = ({ language }: HeroProps) => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center space-y-12 animate-fade-in max-w-5xl mx-auto">
+        <div className="text-center space-y-12 animate-fade-in max-w-5xl mx-auto pt-24">
           {/* Construction Badge - Large and prominent */}
           <div className="inline-flex items-center gap-3 bg-gradient-accent px-10 py-5 rounded-full shadow-glow animate-pulse">
             <Construction className="h-8 w-8 text-accent-foreground" />
