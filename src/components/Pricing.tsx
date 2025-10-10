@@ -13,6 +13,7 @@ const content = {
     monthly: "mois",
     cta: "Commencer",
     popular: "Populaire",
+    comingSoon: "Bientôt",
     plans: [
       {
         name: "Starter",
@@ -63,6 +64,7 @@ const content = {
     monthly: "month",
     cta: "Get Started",
     popular: "Popular",
+    comingSoon: "Coming Soon",
     plans: [
       {
         name: "Starter",
@@ -145,12 +147,19 @@ export const Pricing = ({ language }: PricingProps) => {
               
               <CardHeader className="text-center pb-8 pt-8">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="mb-2">
+                <div className="mb-2 relative">
                   <span className="text-4xl sm:text-5xl font-bold bg-gradient-accent bg-clip-text text-transparent">
                     {plan.price}
                   </span>
                   {plan.price !== "Gratuit" && plan.price !== "Free" && (
                     <span className="text-muted-foreground">/{t.monthly}</span>
+                  )}
+                  {plan.price !== "Gratuit" && plan.price !== "Free" && (
+                    <div className="mt-2">
+                      <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-bold">
+                        {t.comingSoon}
+                      </span>
+                    </div>
                   )}
                 </div>
                 <p className="text-muted-foreground text-sm">{plan.description}</p>
