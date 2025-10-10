@@ -48,17 +48,30 @@ export const Hero = ({ language }: HeroProps) => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Text content */}
-          <div className="text-center lg:text-left space-y-8 animate-fade-in">
-            {/* Construction Badge */}
-            <div className="inline-flex items-center gap-2 bg-gradient-accent px-6 py-3 rounded-full shadow-glow animate-pulse">
-              <Construction className="h-5 w-5 text-accent-foreground" />
-              <span className="text-sm font-bold text-accent-foreground">
-                {t.constructionTitle}
-              </span>
-            </div>
+        <div className="text-center space-y-12 animate-fade-in max-w-5xl mx-auto">
+          {/* Construction Badge - Large and prominent */}
+          <div className="inline-flex items-center gap-3 bg-gradient-accent px-10 py-5 rounded-full shadow-glow animate-pulse">
+            <Construction className="h-8 w-8 text-accent-foreground" />
+            <span className="text-2xl sm:text-3xl font-bold text-accent-foreground">
+              {t.constructionTitle}
+            </span>
+            <Construction className="h-8 w-8 text-accent-foreground" />
+          </div>
 
+          {/* Construction illustration */}
+          <div className="relative animate-fade-in max-w-3xl mx-auto" style={{ animationDelay: '0.2s' }}>
+            <div className="relative">
+              <img 
+                src={constructionImage} 
+                alt="Site en construction" 
+                className="w-full h-auto rounded-2xl shadow-card"
+              />
+              <div className="absolute inset-0 bg-gradient-accent/10 rounded-2xl"></div>
+            </div>
+          </div>
+
+          {/* Text content */}
+          <div className="space-y-6 pt-4">
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
                 {t.title}{" "}
@@ -67,17 +80,17 @@ export const Hero = ({ language }: HeroProps) => {
                 </span>
               </h1>
               
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
                 {t.constructionSubtitle}
               </p>
               
-              <p className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto">
                 {t.subtitle}
               </p>
             </div>
 
             {/* CTA Button */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
                 className="bg-gradient-accent text-accent-foreground hover:shadow-glow transition-all duration-300 text-lg px-8 py-6"
@@ -88,27 +101,15 @@ export const Hero = ({ language }: HeroProps) => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 max-w-3xl mx-auto">
               {t.stats.map((stat, index) => (
-                <div key={index} className="text-center lg:text-left">
+                <div key={index} className="text-center">
                   <div className="text-2xl sm:text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Right side - Construction illustration */}
-          <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="relative">
-              <img 
-                src={constructionImage} 
-                alt="Site en construction" 
-                className="w-full h-auto rounded-2xl shadow-card"
-              />
-              <div className="absolute inset-0 bg-gradient-accent/10 rounded-2xl"></div>
             </div>
           </div>
         </div>
