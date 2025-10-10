@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Download } from "lucide-react";
+import { Download, Construction } from "lucide-react";
 import qubextLogo from "@/assets/qubext-logo.png";
+import constructionImage from "@/assets/construction-hero.png";
 
 interface HeroProps {
   language: 'fr' | 'en';
@@ -9,8 +10,10 @@ interface HeroProps {
 const content = {
   fr: {
     title: "Intelligence de Trading",
-    subtitle: "Alimentée par l'IA",
-    description: "Transformez vos décisions de trading avec notre assistant IA de pointe. Analyses en temps réel, prédictions précises et stratégies optimisées pour maximiser vos profits.",
+    titleAccent: "Alimentée par l'IA",
+    subtitle: "Transformez vos décisions de trading avec notre assistant IA de pointe. Analyses en temps réel, prédictions précises et stratégies optimisées pour maximiser vos profits.",
+    constructionTitle: "Site en Construction",
+    constructionSubtitle: "Notre plateforme de trading IA arrive bientôt",
     cta: "Télécharger l'Application",
     stats: [
       { value: "98%", label: "Précision" },
@@ -20,8 +23,10 @@ const content = {
   },
   en: {
     title: "Trading Intelligence",
-    subtitle: "Powered by AI",
-    description: "Transform your trading decisions with our cutting-edge AI assistant. Real-time analysis, accurate predictions, and optimized strategies to maximize your profits.",
+    titleAccent: "Powered by AI",
+    subtitle: "Transform your trading decisions with our cutting-edge AI assistant. Real-time analysis, accurate predictions, and optimized strategies to maximize your profits.",
+    constructionTitle: "Under Construction",
+    constructionSubtitle: "Our AI trading platform is coming soon",
     cta: "Download the App",
     stats: [
       { value: "98%", label: "Accuracy" },
@@ -36,61 +41,75 @@ export const Hero = ({ language }: HeroProps) => {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
-      {/* Animated background elements */}
+      {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-5xl mx-auto">
-          {/* Logo */}
-          <div className="mb-8 flex justify-center animate-fade-in">
-            <img 
-              src={qubextLogo} 
-              alt="QUBEXT" 
-              className="h-32 sm:h-40 lg:h-48 w-auto"
-            />
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Text content */}
+          <div className="text-center lg:text-left space-y-8 animate-fade-in">
+            {/* Construction Badge */}
+            <div className="inline-flex items-center gap-2 bg-gradient-accent px-6 py-3 rounded-full shadow-glow animate-pulse">
+              <Construction className="h-5 w-5 text-accent-foreground" />
+              <span className="text-sm font-bold text-accent-foreground">
+                {t.constructionTitle}
+              </span>
+            </div>
+
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+                {t.title}{" "}
+                <span className="bg-gradient-accent bg-clip-text text-transparent">
+                  {t.titleAccent}
+                </span>
+              </h1>
+              
+              <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
+                {t.constructionSubtitle}
+              </p>
+              
+              <p className="text-base sm:text-lg text-muted-foreground/80 max-w-2xl mx-auto lg:mx-0">
+                {t.subtitle}
+              </p>
+            </div>
+
+            {/* CTA Button */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button 
+                size="lg" 
+                className="bg-gradient-accent text-accent-foreground hover:shadow-glow transition-all duration-300 text-lg px-8 py-6"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                {t.cta}
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 pt-8">
+              {t.stats.map((stat, index) => (
+                <div key={index} className="text-center lg:text-left">
+                  <div className="text-2xl sm:text-4xl font-bold bg-gradient-accent bg-clip-text text-transparent">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Main heading */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <span className="bg-gradient-to-r from-secondary via-secondary to-accent bg-clip-text text-transparent">
-              {t.title}
-            </span>
-            <br />
-            <span className="text-foreground">{t.subtitle}</span>
-          </h1>
-
-          {/* Description */}
-          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            {t.description}
-          </p>
-
-          {/* CTA Button */}
-          <div className="flex justify-center mb-16 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <Button 
-              size="lg" 
-              className="bg-gradient-accent text-accent-foreground hover:shadow-glow transition-all duration-300 text-lg px-8 py-6 group"
-            >
-              <TrendingUp className="mr-2 h-5 w-5" />
-              {t.cta}
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            {t.stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm sm:text-base text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+          {/* Right side - Construction illustration */}
+          <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="relative">
+              <img 
+                src={constructionImage} 
+                alt="Site en construction" 
+                className="w-full h-auto rounded-2xl shadow-card"
+              />
+              <div className="absolute inset-0 bg-gradient-accent/10 rounded-2xl"></div>
+            </div>
           </div>
         </div>
       </div>

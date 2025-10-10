@@ -147,22 +147,14 @@ export const Pricing = ({ language }: PricingProps) => {
               
               <CardHeader className="text-center pb-8 pt-8">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <div className="mb-2 relative">
-                  <span className="text-4xl sm:text-5xl font-bold bg-gradient-accent bg-clip-text text-transparent">
-                    {plan.price}
-                  </span>
-                  {plan.price !== "Gratuit" && plan.price !== "Free" && (
-                    <span className="text-muted-foreground">/{t.monthly}</span>
-                  )}
-                  {plan.price !== "Gratuit" && plan.price !== "Free" && (
-                    <div className="mt-2">
-                      <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-bold">
-                        {t.comingSoon}
-                      </span>
-                    </div>
-                  )}
+                <div className="mb-2 min-h-[120px] flex flex-col items-center justify-center">
+                  <div className="inline-block bg-gradient-accent px-6 py-3 rounded-full shadow-glow mb-3">
+                    <span className="text-lg font-bold text-accent-foreground">
+                      {t.comingSoon}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground text-sm">{plan.description}</p>
                 </div>
-                <p className="text-muted-foreground text-sm">{plan.description}</p>
               </CardHeader>
 
               <CardContent className="space-y-4">
